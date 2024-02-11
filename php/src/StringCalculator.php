@@ -4,8 +4,8 @@ namespace Kata;
 
 class StringCalculator
 {
-    public static function add(): bool
+    public static function add(): int
     {
-        return true;
+        return 0;
     }
 }

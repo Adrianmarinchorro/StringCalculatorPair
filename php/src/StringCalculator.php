@@ -15,7 +15,7 @@ class StringCalculator
      * @param array $paramsArray
      * @return int
      */
-    public static function sumParams(array $paramsArray): int
+    private static function sumParams(array $paramsArray): int
     {
 
         $result = 0;
@@ -31,7 +31,7 @@ class StringCalculator
      * @param string $params
      * @return string[]
      */
-    public static function sanitizeParams(string $params): array
+    private static function sanitizeParams(string $params): array
     {
         $paramsArray = str_replace('\n', ",", $params);
         $paramsArray = explode(',', $paramsArray);

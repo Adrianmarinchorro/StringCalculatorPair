@@ -22,4 +22,12 @@ class StringCalculatorTest extends TestCase
 
         self::assertEquals(5, $result);
     }
+
+    /** @test */
+    public function given_more_than_one_params_then_return_the_sum_of_the_params(): void
+    {
+        $result = StringCalculator::add("1,3");
+
+        self::assertEquals(4, $result);
+    }
 }

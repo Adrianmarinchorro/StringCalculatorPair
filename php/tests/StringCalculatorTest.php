@@ -46,4 +46,12 @@ class StringCalculatorTest extends TestCase
 
         $this->assertEquals(3, StringCalculator::add($params));
     }
+
+    /** @test */
+    public function given_1_3_with_personalized_separator_then_return_4()
+    {
+        $params = '//_\n1_3';
+
+        $this->assertEquals(4, StringCalculator::add($params));
+    }
 }

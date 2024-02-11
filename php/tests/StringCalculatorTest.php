@@ -30,10 +30,18 @@ class StringCalculatorTest extends TestCase
     }
 
     /** @test */
-    public function given_params_with_newlines_then_return_the_sum_of_params()
+    public function given_1_n2_3_with_newlines_then_return_6()
     {
         $this->assertEquals(6, StringCalculator::add('1\n2,3'));
     }
+
+    /** @test */
+    public function given_1_n2_3_n5_with_newlines_then_return_11()
+    {
+        $this->assertEquals(11, StringCalculator::add('1\n2,3\n5'));
+    }
+
+
 
 
 }

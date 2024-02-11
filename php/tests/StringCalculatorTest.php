@@ -8,7 +8,8 @@ use PHPUnit\Framework\TestCase;
 class StringCalculatorTest extends TestCase
 {
 
-    public static function simpleCalculator() {
+    public static function simpleCalculator()
+    {
         return [
             "given_an_empty_param_then_return_0" => [ "params" => "", "result" => 0],
             "given_an_only_param_then_return_the_value_param" => [ "params" => "5", "result" => 5],
@@ -23,8 +24,16 @@ class StringCalculatorTest extends TestCase
      * @dataProvider simpleCalculator
      * @test
      */
-    public function given_any_params_then_return_the_sum_of_params(string $params, int $result) {
+    public function given_any_params_then_return_the_sum_of_params(string $params, int $result)
+    {
         $this->assertEquals(StringCalculator::add($params), $result);
     }
+
+    /** @test */
+    public function given_params_with_newlines_then_return_the_sum_of_params()
+    {
+        $this->assertEquals(StringCalculator::add('1\n2,3'), 6);
+    }
+
 
 }

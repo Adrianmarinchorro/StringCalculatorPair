@@ -14,4 +14,12 @@ class StringCalculatorTest extends TestCase
 
         self::assertEquals(0, $result);
     }
+
+    /** @test */
+    public function given_an_only_param_then_return_the_value_param(): void
+    {
+        $result = StringCalculator::add("5");
+
+        self::assertEquals(5, $result);
+    }
 }

@@ -7,43 +7,24 @@ use PHPUnit\Framework\TestCase;
 
 class StringCalculatorTest extends TestCase
 {
-    /** @test */
-    public function given_an_empty_param_then_return_0(): void
-    {
-        $result = StringCalculator::add("");
 
-        self::assertEquals(0, $result);
+    public static function simpleCalculator() {
+        return [
+            "given_an_empty_param_then_return_0" => [ "params" => "", "result" => 0],
+            "given_an_only_param_then_return_the_value_param" => [ "params" => "5", "result" => 5],
+            "given_1_and_3_then_return_4" => [ "params" => "1,3", "result" => 4],
+            "given_2_and_3_then_return_5" => [ "params" => "2,3", "result" => 5],
+            "given_3_3_3_then_return_9" => [ "params" => "3,3,3", "result" => 9],
+            "given_many_numbers_then_return_their_sum" => [ "params" => "1,2,3,4,5,6,7,8,9", "result" => 45],
+        ];
     }
 
-    /** @test */
-    public function given_an_only_param_then_return_the_value_param(): void
-    {
-        $result = StringCalculator::add("5");
-
-        self::assertEquals(5, $result);
+    /**
+     * @dataProvider simpleCalculator
+     * @test
+     */
+    public function given_any_params_then_return_the_sum_of_params(string $params, int $result) {
+        $this->assertEquals(StringCalculator::add($params), $result);
     }
 
-    /** @test */
-    public function given_1_and_3_then_return_4(): void
-    {
-        $result = StringCalculator::add("1,3");
-
-        self::assertEquals(4, $result);
-    }
-
-    /** @test */
-    public function given_3_and_3_then_return_6(): void
-    {
-        $result = StringCalculator::add("3,3");
-
-        self::assertEquals(6, $result);
-    }
-
-    /** @test */
-    public function given_3_3_3_then_return_9(): void
-    {
-        $result = StringCalculator::add("3,3,3");
-
-        self::assertEquals(9, $result);
-    }
 }

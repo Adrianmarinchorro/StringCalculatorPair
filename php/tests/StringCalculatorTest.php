@@ -38,4 +38,12 @@ class StringCalculatorTest extends TestCase
 
         self::assertEquals(6, $result);
     }
+
+    /** @test */
+    public function given_3_3_3_then_return_9(): void
+    {
+        $result = StringCalculator::add("3,3,3");
+
+        self::assertEquals(9, $result);
+    }
 }

@@ -8,6 +8,15 @@ class StringCalculator
     {
         $paramsArray = explode(',',$params);
 
+        return self::sumParams($paramsArray);
+    }
+
+    /**
+     * @param array $paramsArray
+     * @return int
+     */
+    public static function sumParams(array $paramsArray): int
+    {
         $result = 0;
 
         foreach ($paramsArray as $param) {

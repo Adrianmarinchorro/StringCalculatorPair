@@ -26,13 +26,13 @@ class StringCalculatorTest extends TestCase
      */
     public function given_any_params_then_return_the_sum_of_params(string $params, int $result)
     {
-        $this->assertEquals(StringCalculator::add($params), $result);
+        $this->assertEquals($result, StringCalculator::add($params));
     }
 
     /** @test */
     public function given_params_with_newlines_then_return_the_sum_of_params()
     {
-        $this->assertEquals(StringCalculator::add('1\n2,3'), 6);
+        $this->assertEquals(6, StringCalculator::add('1\n2,3'));
     }
 
 

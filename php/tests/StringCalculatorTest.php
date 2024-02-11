@@ -40,8 +40,4 @@ class StringCalculatorTest extends TestCase
     {
         $this->assertEquals(11, StringCalculator::add('1\n2,3\n5'));
     }
-
-
-
-
 }

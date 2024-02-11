@@ -6,15 +6,7 @@ class StringCalculator
 {
     public static function add(string $params): int
     {
-        if ($params === '1\n2,3') {
-            return 6;
-        }
-
-        if ($params === '1\n2,3\n5') {
-            return 11;
-        }
-
-        $paramsArray = explode(',',$params);
+        $paramsArray = self::sanitizeParams($params);
 
         return self::sumParams($paramsArray);
     }
@@ -25,6 +17,7 @@ class StringCalculator
      */
     public static function sumParams(array $paramsArray): int
     {
+
         $result = 0;
 
         foreach ($paramsArray as $param) {
@@ -32,5 +25,16 @@ class StringCalculator
         }
 
         return $result;
+    }
+
+    /**
+     * @param string $params
+     * @return string[]
+     */
+    public static function sanitizeParams(string $params): array
+    {
+        $paramsArray = str_replace('\n', ",", $params);
+        $paramsArray = explode(',', $paramsArray);
+        return $paramsArray;
     }
 }

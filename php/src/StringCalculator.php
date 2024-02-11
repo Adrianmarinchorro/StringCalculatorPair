@@ -8,18 +8,12 @@ class StringCalculator
     {
         $paramsArray = explode(',',$params);
 
-        if ($paramsArray[0] === '3' && $paramsArray[1] === '3') {
-            return 6;
+        $result = 0;
+
+        foreach ($paramsArray as $param) {
+            $result += (int) $param;
         }
 
-        if ($paramsArray[0] === '1' && $paramsArray[1] === '3') {
-            return 4;
-        }
-
-        if ($params === '5') {
-            return 5;
-        }
-
-        return 0;
+        return $result;
     }
 }

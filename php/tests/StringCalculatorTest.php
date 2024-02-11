@@ -54,4 +54,12 @@ class StringCalculatorTest extends TestCase
 
         $this->assertEquals(4, StringCalculator::add($params));
     }
+
+    /** @test */
+    public function given_1_5_with_personalized_separator_then_return_6()
+    {
+        $params = '//*\n1*5';
+
+        $this->assertEquals(6, StringCalculator::add($params));
+    }
 }
